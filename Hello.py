@@ -1,7 +1,8 @@
-k = 1
-while True:
-    lst_2 = [[j**2 for j in range(k, k+3)]]
-    k += 3
-    if k == 10:
-        break
-    print(lst_2)
+def make_chocolate(small, big, goal):
+    five_count = goal//5
+    if 5 * five_count > big * 5 + small or 5 * big + small < goal or 5 * five_count + small < goal:
+        return -1
+    elif 5 * big + small >= goal and big > five_count:
+        return goal - 5 * five_count
+    return goal - 5 * big
+print(make_chocolate(4, 4, 13))
